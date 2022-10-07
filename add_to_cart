@@ -1,0 +1,89 @@
+import pytest
+import time
+import json
+import autoit
+import ait
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+options_driver = webdriver.ChromeOptions()
+
+s = Service("C:\chromedriver")
+
+class TestGeneral():
+  def setup_method(self):
+    self.driver = webdriver.Chrome(service=s, options=options_driver)
+    self.vars = {}
+    self.driver.implicitly_wait(10)
+  
+  def teardown_method(self):
+    self.driver.quit()
+  
+  def test_general(self):
+    self.driver.get("my_website_url")
+    self.driver.set_window_size(1296, 688)
+    time.sleep(4)
+    ait.write("admin")
+    time.sleep(3)
+    ait.move(655, 220)
+    time.sleep(4)
+    ait.click(655, 220)
+    ait.write("admin")
+    ait.move(705, 290)
+    ait.click(705, 290)
+    time.sleep(4)
+    ait.move(1123, 630)
+    time.sleep(4)
+    ait.click(1123, 630)
+    self.driver.implicitly_wait(10)
+    time.sleep(17)
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").click()
+    # self.driver.find_element(By.XPATH, "//input").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").send_keys("Topicrem")
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__icon-search > svg").click()
+    time.sleep(4)
+    self.driver.execute_script("window.scrollTo(0,194.6666717529297)")
+    time.sleep(4)
+    #self.driver.find_element(By.CSS_SELECTOR, ".button-primary_all-sizes").click()
+    self.driver.find_element(By.XPATH, "//div[@id='root']/main/section/div[2]/div[2]/div[4]/div/button/span").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".button-as-link").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").send_keys("Ganier")
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__icon-search > svg").click()
+    time.sleep(4)
+    self.driver.execute_script("window.scrollTo(0,194.6666717529297)")
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".button-primary_all-sizes > span").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".button-as-link").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").send_keys("Razak")
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__icon-search > svg").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".product-card__title").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".button-primary_all-sizes > span").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".button-as-link").click()
+    time.sleep(4)
+    self.driver.find_element(By.CSS_SELECTOR, ".mini-cart__counter").click()
+    self.driver.close()
+
+general = TestGeneral()
+general.setup_method()
+general.test_general()
+general.teardown_method()
