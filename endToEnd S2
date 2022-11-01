@@ -1,0 +1,76 @@
+import pytest
+import time
+import json
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+class TestOrdersScenarioS2():
+  def setup_method(self, method):
+    self.driver = webdriver.Chrome()
+    self.vars = {}
+  
+  def teardown_method(self, method):
+    self.driver.quit()
+  
+  def test_ordersScenarioS2(self):
+    self.driver.get("https://mywebsite.com")
+    self.driver.set_window_size(1296, 688)
+    self.vars["login"] = len(self.driver.find_elements(By.XPATH, "//a[@href=\'my-account\']"))
+    if self.driver.execute_script("return (arguments[0]>0)", self.vars["login"]):
+      self.driver.find_element(By.CSS_SELECTOR, ".my-account-dropdown__anchor-point path").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".my-account-dropdown__logout-btn").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".logo img").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".my-account-dropdown__wrapper").click()
+    self.driver.find_element(By.LINK_TEXT, "Connexion").click()
+    self.driver.find_element(By.ID, "username").click()
+    self.driver.find_element(By.ID, "username").send_keys("mcoulibaly@renaud-bray.com")
+    self.driver.find_element(By.ID, "password").click()
+    self.driver.find_element(By.ID, "password").send_keys("@Ta123456\\n")
+    self.driver.find_element(By.CSS_SELECTOR, ".button:nth-child(4)").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".mini-cart__icon").click()
+    self.vars["produitincart"] = len(self.driver.find_elements(By.XPATH, "//div[@class=\'cart-item-details\']"))
+    while self.driver.execute_script("return (arguments[0]>0)", self.vars["produitincart"]):
+      self.driver.find_element(By.XPATH, "//button[@class=\'actions__btn actions__remove\']").click()
+      self.vars["produitincart"] = len(self.driver.find_elements(By.XPATH, "//div[@class=\'cart-item-details\']"))
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").send_keys("l\'agent jean, le jeu")
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__icon-search > svg").click()
+    self.vars["element"] = len(self.driver.find_elements(By.XPATH, "//div[@class=\'product-details__actions-wrapper-1\']/button"))
+    if self.driver.execute_script("return (arguments[0]>0)", self.vars["element"]):
+      self.driver.find_element(By.CSS_SELECTOR, ".button-primary_all-sizes").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".button-as-link").click()
+    else:
+      self.driver.find_element(By.CSS_SELECTOR, ".product-card__title").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".button-primary_all-sizes").click()
+      self.driver.find_element(By.XPATH, "//div/div[2]/div/div/div[2]/button").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".mini-cart__icon").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".button-link > span").click()
+    self.vars["address"] = len(self.driver.find_elements(By.XPATH, "//button[@class=\'button button-as-link edit-btn\']"))
+    if self.driver.execute_script("return (arguments[0]>0)", self.vars["address"]):
+      self.driver.find_element(By.CSS_SELECTOR, ".edit-btn > span").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".address-list__block-selected .user-name > .user-name").click()
+    self.driver.find_element(By.ID, "shippingMethod-sm10006").click()
+    self.driver.find_element(By.ID, "shippingMethod-sm10005").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .sum").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .title").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .title").click()
+    self.driver.find_element(By.XPATH, "//div[@id=\'root\']/main/section/section/div/div[3]/div[2]/div/div/div[3]/span").click()
+    self.driver.find_element(By.XPATH, "//div[@id=\'root\']/main/section/section/div/div[3]/div[2]/div/div/div[3]/span").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(3) > .title").click()
+    self.driver.find_element(By.XPATH, "//div[@id=\'root\']/main/section/section/div/div[3]/div[2]/div/div/div[3]/span").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(4) > .title").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(4) > .title").click()
+    self.driver.execute_script("window.scrollTo(0,50)")
+    self.driver.find_element(By.CSS_SELECTOR, ".back-button > span").click()
+    self.vars["produitincart"] = len(self.driver.find_elements(By.XPATH, "//div[@class=\'cart-item-details\']"))
+    while self.driver.execute_script("return (arguments[0]>0)", self.vars["produitincart"]):
+      self.driver.find_element(By.XPATH, "//button[@class=\'actions__btn actions__remove\']").click()
+      self.vars["produitincart"] = len(self.driver.find_elements(By.XPATH, "//div[@class=\'cart-item-details\']"))
+    self.driver.find_element(By.CSS_SELECTOR, ".my-account-dropdown__text-name").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".my-account-dropdown__logout-btn").click()
+    self.driver.close()
