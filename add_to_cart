@@ -14,7 +14,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 options_driver = webdriver.ChromeOptions()
 
-s = Service("C:\chromedriver")
+s = Service("C:\chromedriver") # the location of your selenium chrome driver or your geckodriver
 
 class TestGeneral():
   def setup_method(self):
