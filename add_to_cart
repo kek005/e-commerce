@@ -41,7 +41,7 @@ class TestGeneral():
     ait.move(1123, 630)
     time.sleep(4)
     ait.click(1123, 630)
-    self.driver.implicitly_wait(10)
+    self.driver.implicitly_wait(5)
     time.sleep(17)
     self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").click()
     # self.driver.find_element(By.XPATH, "//input").click()
