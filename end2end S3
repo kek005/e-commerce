@@ -61,7 +61,7 @@ class TestOrdersScenarioS3():
     self.driver.find_element(By.CSS_SELECTOR, ".method__type__title").click()
     self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .sum").click()
     self.driver.find_element(By.CSS_SELECTOR, ".stage-btn > span").click()
-    self.driver.execute_script("window.scrollTo(0,50)")
+    self.driver.execute_script("window.scrollTo(0,60)")
     self.driver.find_element(By.CSS_SELECTOR, ".back-button > span").click()
     self.driver.find_element(By.CSS_SELECTOR, ".mini-cart__counter").click()
     self.vars["produitincart"] = len(self.driver.find_elements(By.XPATH, "//div[@class=\'cart-item-details\']"))
