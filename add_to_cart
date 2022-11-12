@@ -30,7 +30,7 @@ class TestGeneral():
     self.driver.set_window_size(1296, 68)
     time.sleep(4)
     ait.write("admin")
-    time.sleep(3)
+    time.sleep(4)
     ait.move(655, 210)
     #time.sleep(4)
     ait.click(655, 220)
