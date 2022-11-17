@@ -52,7 +52,7 @@ class TestOrdersScenarioS3():
     self.driver.find_element(By.ID, "nameOnCard").click()
     self.driver.find_element(By.ID, "nameOnCard").send_keys("yyyy")
     self.driver.find_element(By.ID, "cardNumber").click()
-    self.driver.find_element(By.ID, "cardNumber").send_keys("1111 9700 0000 5262")
+    self.driver.find_element(By.ID, "cardNumber").send_keys("1111 9722 0000 5262")
     self.driver.find_element(By.ID, "expiryDate").click()
     self.driver.find_element(By.ID, "expiryDate").send_keys("01/23")
     self.driver.find_element(By.ID, "cardCVV").click()
