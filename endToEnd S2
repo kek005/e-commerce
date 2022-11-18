@@ -46,7 +46,7 @@ class TestOrdersScenarioS2():
       self.driver.find_element(By.CSS_SELECTOR, ".button-as-link").click()
     else:
       self.driver.find_element(By.CSS_SELECTOR, ".product-card__title").click()
-      self.driver.find_element(By.CSS_SELECTOR, ".button-primary_all-sizes").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".button-primary_all-size").click()
       self.driver.find_element(By.XPATH, "//div/div[2]/div/div/div[2]/button").click()
     self.driver.find_element(By.CSS_SELECTOR, ".mini-cart__icon").click()
     self.driver.find_element(By.CSS_SELECTOR, ".button-link > span").click()
