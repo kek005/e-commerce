@@ -67,7 +67,7 @@ class TestOrdersScenarioS4():
     self.driver.find_element(By.ID, "expiryDate").click()
     self.driver.find_element(By.ID, "expiryDate").send_keys("01/23")
     self.driver.find_element(By.ID, "cardCVV").click()
-    self.driver.find_element(By.ID, "cardCVV").send_keys("123")
+    self.driver.find_element(By.ID, "cardCVV").send_keys("193")
     self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .sum").click()
     self.driver.find_element(By.CSS_SELECTOR, ".method__type__title").click()
     self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .sum").click()
