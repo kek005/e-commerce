@@ -38,7 +38,7 @@ class TestOrdersScenarioS2():
       self.driver.find_element(By.XPATH, "//button[@class=\'actions__btn actions__remove\']").click()
       self.vars["produitincart"] = len(self.driver.find_elements(By.XPATH, "//div[@class=\'cart-item-details\']"))
     self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").click()
-    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").send_keys("yyyyyyyy")
+    self.driver.find_element(By.CSS_SELECTOR, ".search-field__input").send_keys("yyyyyyy")
     self.driver.find_element(By.CSS_SELECTOR, ".search-field__icon-search > svg").click()
     self.vars["element"] = len(self.driver.find_elements(By.XPATH, "//div[@class=\'product-details__actions-wrapper-1\']/button"))
     if self.driver.execute_script("return (arguments[0]>0)", self.vars["element"]):
