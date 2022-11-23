@@ -51,7 +51,7 @@ class TestOrdersScenarioS4():
     self.driver.find_element(By.CSS_SELECTOR, ".mini-cart__icon").click()
     self.driver.find_element(By.CSS_SELECTOR, ".button-link > span").click()
     self.vars["address"] = len(self.driver.find_elements(By.XPATH, "//button[@class=\'button button-as-link edit-btn\']"))
-    if self.driver.execute_script("return (arguments[0]>0)", self.vars["address"]):
+    if self.driver.execute_script("return (arguments[0]>0)", self.vars["adddress"]):
       self.driver.find_element(By.CSS_SELECTOR, ".edit-btn > span").click()
     self.driver.find_element(By.CSS_SELECTOR, ".address-list__block-selected .user-name > .user-name").click()
     self.driver.find_element(By.ID, "shippingMethod-sm10006").click()
