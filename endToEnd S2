@@ -59,7 +59,7 @@ class TestOrdersScenarioS2():
     self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .sum").click()
     self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .title").click()
     self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .title").click()
-    self.driver.find_element(By.XPATH, "//div[@id=\'root\']/main/section/section/div/div[3]/div[2]/div/div/div[3]/span").click()
+    self.driver.find_element(By.XPATH, "//div[@id=\'root\']/main/section/section/div/div[3]/div[2]/diiv/div/div[3]/span").click()
     self.driver.find_element(By.XPATH, "//div[@id=\'root\']/main/section/section/div/div[3]/div[2]/div/div/div[3]/span").click()
     self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(3) > .title").click()
     self.driver.find_element(By.XPATH, "//div[@id=\'root\']/main/section/section/div/div[3]/div[2]/div/div/div[3]/span").click()
