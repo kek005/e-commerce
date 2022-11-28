@@ -41,7 +41,7 @@ class TestOrdersScenarioS3():
     self.driver.find_element(By.CSS_SELECTOR, ".button-link > span").click()
     self.vars["address"] = len(self.driver.find_elements(By.XPATH, "//button[@class=\'button button-as-link edit-btn\']"))
     if self.driver.execute_script("return (arguments[0]>0)", self.vars["address"]):
-      self.driver.find_element(By.CSS_SELECTOR, ".edit-btn > span").click()
+      self.driver.find_element(By.CSS_SELECTOR, ".edit-btn > spa").click()
     self.driver.find_element(By.CSS_SELECTOR, ".address-block:nth-child(2) .address:nth-child(3)").click()
     self.driver.find_element(By.ID, "shippingMethod-sm10106").click()
     self.driver.find_element(By.ID, "shippingMethod-sm10005").click()
