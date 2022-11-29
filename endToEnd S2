@@ -54,7 +54,7 @@ class TestOrdersScenarioS2():
     if self.driver.execute_script("return (arguments[0]>0)", self.vars["address"]):
       self.driver.find_element(By.CSS_SELECTOR, ".edit-btn > span").click()
     self.driver.find_element(By.CSS_SELECTOR, ".address-list__block-selected .user-name > .user-name").click()
-    self.driver.find_element(By.ID, "shippingMethod-sm10006").click()
+    self.driver.find_element(By.ID, "shippingMethod-sm10007").click()
     self.driver.find_element(By.ID, "shippingMethod-sm10005").click()
     self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .sum").click()
     self.driver.find_element(By.CSS_SELECTOR, ".sum-row:nth-child(1) > .title").click()
