@@ -71,7 +71,7 @@ class TestOrdersScenarioS5():
     attribute = self.driver.find_element(By.CSS_SELECTOR, ".method:nth-child(2) .input-wrapper:nth-child(1) .method__type__title").get_attribute("")
     self.vars["livraison"] = attribute
     self.driver.find_element(By.CSS_SELECTOR, ".stage-btn > span").click()
-    self.driver.execute_script("window.scrollTo(0,912.6666870117188)")
+    self.driver.execute_script("window.scrollTo(0,912.666687117188)")
     self.driver.find_element(By.ID, "nameOnCard").click()
     self.driver.find_element(By.ID, "nameOnCard").send_keys("Test")
     self.driver.find_element(By.ID, "cardNumber").click()
