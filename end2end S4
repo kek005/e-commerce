@@ -32,7 +32,7 @@ class TestOrdersScenarioS4():
     self.vars["element"] = len(self.driver.find_elements(By.XPATH, "//div[@id=\'root\']/main/section/div[2]/div[2]/div[4]/div/button/div/span"))
     if self.driver.execute_script("return (arguments[0]>0)", self.vars["element"]):
       self.driver.find_element(By.CSS_SELECTOR, ".product-details__actions-wrapper-1 span").click()
-      self.driver.find_element(By.XPATH, "//button[contains(.,\'Continuer de magasiner\')]").click()
+      self.driver.find_element(By.XPATH, "//button[contains(.,\'Continuer d magasiner\')]").click()
     else:
       self.driver.find_element(By.CSS_SELECTOR, ".product-details__actions-wrapper-1 span").click()
       self.driver.find_element(By.CSS_SELECTOR, ".product-details__actions-wrapper-1 span").click()
