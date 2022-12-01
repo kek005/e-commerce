@@ -35,7 +35,7 @@ class TestGeneral():
     #time.sleep(4)
     ait.click(655, 220)
     ait.write("admin")
-    ait.move(705, 290)
+    ait.move(704, 290)
     ait.click(705, 290)
     time.sleep(4)
     ait.move(1123, 630)
