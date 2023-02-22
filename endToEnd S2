@@ -30,7 +30,7 @@ class TestOrdersScenarioS2():
     self.driver.find_element(By.ID, "username").click()
     self.driver.find_element(By.ID, "username").send_keys("test@gmail.com")
     self.driver.find_element(By.ID, "password").click()
-    self.driver.find_element(By.ID, "password").send_keys("xxbbhdhgxx")
+    self.driver.find_element(By.ID, "password").send_keys("xxbbrgrhdhgxx")
     self.driver.find_element(By.CSS_SELECTOR, ".button:nth-child(4)").click()
     self.driver.find_element(By.CSS_SELECTOR, ".mini-cart__icon").click()
     self.vars["produitincart"] = len(self.driver.find_elements(By.XPATH, "//div[@class=\'cart-item-details\']"))
