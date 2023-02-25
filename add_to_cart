@@ -27,7 +27,7 @@ class TestGeneral():
   
   def test_general(self):
     self.driver.get("my_website_url")
-    self.driver.set_window_size(1286, 80)
+    self.driver.set_window_size(1286, 81)
     time.sleep(5)
     ait.write("admin")
     time.sleep(4)
