@@ -28,7 +28,7 @@ class TestOrdersScenarioS5():
     self.driver.find_element(By.CSS_SELECTOR, ".my-account-dropdown__text").click()
     self.driver.find_element(By.LINK_TEXT, "Connexion").click()
     self.driver.find_element(By.ID, "username").click()
-    self.driver.find_element(By.ID, "username").send_keys("lauy@gmail.com")
+    self.driver.find_element(By.ID, "username").send_keys("lanhguy@gmail.com")
     self.driver.find_element(By.ID, "password").click()
     self.driver.find_element(By.ID, "password").send_keys("12i3gfgf456")
     self.driver.find_element(By.CSS_SELECTOR, ".button:nth-child(4)").click()
