@@ -49,7 +49,7 @@ class TestGeneral():
     time.sleep(4)
     self.driver.find_element(By.CSS_SELECTOR, ".search-field__icon-search > svg").click()
     time.sleep(4)
-    self.driver.execute_script("window.scrollTo(0,194.666717529297)")
+    self.driver.execute_script("window.scrollTo(0,194.66629297)")
     time.sleep(4)
     #self.driver.find_element(By.CSS_SELECTOR, ".button-primary_all-sizes").click()
     self.driver.find_element(By.XPATH, "//div[@id='root']/main/section/div[2]/div[2]/div[4]/div/button/span").click()
